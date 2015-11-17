@@ -22,7 +22,7 @@ with open('example.csv') as csvfile:
 
 	coldex = []
 	searchVal = input('What color would you like to see sales numbers for? ')
-	coldex = [i for i, x in enumerate(colors) if x == searchVal]
+	coldex = [i for i, x in enumerate(colors) if x == searchVal.lower()]
 		
 	for i in coldex:
 		salesDate = dates[i]
