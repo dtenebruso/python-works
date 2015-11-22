@@ -35,3 +35,4 @@ target.write("\n")
 time.sleep(1)
 
 print("\nWriting is complete. Closing %r..." % filename)
+target.close()
