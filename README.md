@@ -1,5 +1,3 @@
 # python-works
-A bunch of .py works that i've done for fun
-
-
-This is just a collection of programs I've made for fun using the python language. Anyway... yeah
+Python programs I have written for pratice. Constantly looking at where to improve and looking for new and innovative ways to get things done using python. 
+My goal is Python fluency within the next 2-3 years and then branch out from there. Any tips on how to craft cleaner and more functional is welcome.
