@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 def banner(uName):
 	ban_length = len(uName)
 
