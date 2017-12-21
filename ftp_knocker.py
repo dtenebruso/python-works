@@ -1,3 +1,9 @@
+## THINGS to do::::! -- must get sleep
+## add a subnet validator == valid_ip method
+## check performance of ipaddress module vs socket for host scanning a network
+## naming conventions???? clean up code???? 
+## in time clean up by adding more functionality to existing functions, using real exception handling
+
 import socket
 import sys
 import subprocess
@@ -43,10 +49,11 @@ def valid_ip(testADDR):
 
 def networkScan(ipRange):
 	targetNet = ipaddress.ip_network(ipRange)
-	for host in targetNet.hosts(
+	for node in targetNet.hosts():
+		hostScan(node)
 
 
-def targetScanner(host):	
+def hostScan(host):	
 	socket = socket.socket(AF_INET, SOCK_STREAM)
 
 
