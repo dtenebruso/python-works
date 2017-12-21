@@ -28,7 +28,7 @@ def main():
 			print("\tPlease hold onto your panties because we are doing a scannies... shutup i was drunk while coding this,**buuerrerrrp*")
 			print("-"*120)
 
-			targetScanner(ipAddress[0], ipAddress[1])
+			networkScan(str(ipAddress))
 		else:
 			sys.exit()
 
@@ -41,8 +41,12 @@ def valid_ip(testADDR):
    		print('\n{} is not a valid IP address.\n\n*\\.*\\.*\\.*\\.Exiting./*./*./*./*'.format(testADDR))
    		return False
 
+def networkScan(ipRange):
+	targetNet = ipaddress.ip_network(ipRange)
+	for host in targetNet.hosts(
 
-def targetScanner(address, range):	
+
+def targetScanner(host):	
 	socket = socket.socket(AF_INET, SOCK_STREAM)
 
 
