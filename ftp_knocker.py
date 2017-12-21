@@ -1,14 +1,14 @@
 ## THINGS to do::::! -- must get sleep
 ## add a subnet validator == valid_ip method
-## check performance of ipaddress module vs socket for host scanning a network
-## naming conventions???? clean up code???? 
+## check performance of ipaddress module vs socket module for host scanning a network
+## naming conventions???? clean up code????
 ## in time clean up by adding more functionality to existing functions, using real exception handling
 
 import socket
 import sys
 import subprocess
 import platform
-from ftplib import FTP 
+from ftplib import FTP
 
 
 def main():
@@ -27,11 +27,11 @@ def main():
 		print("\nToo much info; What the hell did you type?\ntry something like 192.168.1.1/24 || a.k.a [IP address][backslash][subnet mask]")
 	elif len(ipAddress) < 2:
 		print("\nNot enough info; What the hell did you type?\ntry something like 192.168.1.1/24 || a.k.a [IP address][backslash][subnet mask]")
-	else:	
+	else:
 		if valid_ip(ipAddress[0]) == True:
 			print("\nSeems to be a valid IP... let's have crack at it, eh?!\n\n")
 			print("-"*120)
-			print("\tPlease hold onto your panties because we are doing a scannies... shutup i was drunk while coding this,**buuerrerrrp*")
+			print("  Please hold onto your panties because we are doing a scannies... shutup i was drunk while coding this,**buuerrerrrp*")
 			print("-"*120)
 
 			networkScan(str(ipAddress))
@@ -40,7 +40,7 @@ def main():
 
 
 def valid_ip(testADDR):
-    try: 
+    try:
         socket.inet_aton(testADDR)
         return True
     except:
@@ -53,8 +53,11 @@ def networkScan(ipRange):
 		hostScan(node)
 
 
-def hostScan(host):	
-	socket = socket.socket(AF_INET, SOCK_STREAM)
+def hostScan(host):
+	sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+	# if connection returned value confirms port is open --> store IP address somewhere for later use
+	# else continue to next node
+	portState = sock.connect(host, 21)
 
 
 
